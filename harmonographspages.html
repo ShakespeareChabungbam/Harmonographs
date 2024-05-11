@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmonographs</title>
+<style>
+  body {
+  font-family: 'Arial', sans-serif;
+  background-color: #181818; /* Dark background color like Spotify */
+  color: #fff; /* Text color */
+  margin: 0;
+  padding: 20px;
+}
+
+/* Harmonograph container */
+.harmonograph {
+  background-color: #282828; /* Darker background color */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.harmonograph img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Harmonograph content */
+.harmonograph-content {
+  padding: 20px;
+  position: relative;
+}
+
+.harmonograph-content h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #fff; /* Title color */
+}
+
+/* Like and comment buttons */
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: opacity 0.3s ease;
+  display: block; /* Ensure buttons are block-level elements */
+}
+
+.button img {
+  width: 20px; /* Adjust as needed */
+  height: auto;
+  filter: invert(1); /* Invert icon color to white */
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* Likes count and comment input container */
+.likes-comments-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  width: 300px; /* Fixed width */
+}
+
+/* Likes count */
+.likes-count {
+  margin-right: 10px;
+  font-size: 0.9rem;
+  color: #b3b3b3; /* Lighter color */
+}
+
+/* Comment input */
+.comment-input,
+.feedback-form textarea {
+  flex: 1; /* Take up remaining space */
+  padding: 10px;
+  border: 1px solid #282828; /* Match background color */
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 0.9rem;
+  color: #fff; /* Text color */
+  background-color: #282828; /* Background color */
+  resize: none; /* Disable textarea resizing */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Post comment button */
+.post-comment-button {
+  background-color: #1db954; /* Green color like Spotify */
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-comment-button:hover {
+  background-color: #1ed760; /* Darker green on hover */
+}
+
+/* Comments section */
+.comments-section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #282828; /* Match background color */
+}
+
+.comment {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #fff; /* Text color */
+}
+
+/* Feedback form */
+.feedback-form {
+  display: none; /* Hidden by default */
+  margin-top: 20px; /* Add some space above the form */
+  max-width: 300px; /* Limit width */
+}
+
+/* Feedback form send button */
+.feedback-form input[type="submit"] {
+  background-color: #1db954; /* Green color like Spotify */
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 15px; /* Adjust padding */
+  font-size: 0.9rem; /* Adjust font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-form input[type="submit"]:hover {
+  background-color: #1ed760; /* Darker green on hover */
+}
+
+/* Feedback button */
+.feedback-button {
+  background-color: #1db954; /* Green color like Spotify */
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px; /* Larger padding */
+  font-size: 1rem; /* Larger font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.feedback-button:hover {
+  background-color: #1ed760; /* Darker green on hover */
+}
+
+/* Close button */
+.close-button {
+  background-color: #ff5555; /* Red color */
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  padding: 8px 15px; /* Adjust padding */
+  font-size: 0.9rem; /* Adjust font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #ff3333; /* Darker red on hover */
+}
+
+/* Blue filter for like button */
+.like-button.blue img {
+  filter: invert(0); /* Blue color */
+}
+
+</style>
+</head>
+<body>
+
+<!-- Harmonographs container -->
+<div class="harmonograph">
+  <!-- Harmonograph image -->
+  <img src="Haemonographs/Lil Uzi Vert.png" alt="Harmonograph 1">
+
+  <!-- Harmonograph content -->
+  <div class="harmonograph-content">
+    <h2>The Way Life Goes</h2>
+    <!-- Like and comment buttons -->
+    <div class="harmonograph-buttons">
+      <button class="button like-button" onclick="likeButtonClicked(this)"><img src="like.png" alt="Like"></button>
+    </div>
+    <div class="likes-comments-container">
+      <span class="likes-count">0 likes</span>
+      <input type="text" class="comment-input" placeholder="Write a comment...">
+      <button class="post-comment-button">Post</button>
+    </div>
+
+    <!-- Comments section -->
+    <div class="comments-section">
+      <!-- Comments will be displayed here -->
+    </div>
+  </div>
+</div>
+
+<!-- Feedback form -->
+<form class="feedback-form" onsubmit="sendFeedback(event)">
+  <textarea rows="4" cols="50" name="message" placeholder="Enter your feedback here..."></textarea><br>
+  <input type="submit" value="Send">
+  <button type="button" class="feedback-button" onclick="toggleFeedbackForm()">Feedback</button>
+  <button type="button" class="close-button" onclick="toggleFeedbackForm()" style="display: none;">Close</button>
+</form>
+
+<!-- Add more harmonographs as needed -->
+
+<script>
+  // JavaScript for like and comment buttons
+  const likeButtons = document.querySelectorAll('.like-button');
+  const postCommentButtons = document.querySelectorAll('.post-comment-button');
+
+  likeButtons.forEach((button, index) => {
+    let likes = 0;
+    button.addEventListener('click', () => {
+      likes++;
+      const likesCountElement = button.parentElement.parentElement.querySelector('.likes-count');
+      likesCountElement.textContent = `${likes} likes`;
+      // Change like button color to blue when clicked
+      button.classList.add('blue');
+    });
+  });
+
+  postCommentButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const harmonograph = button.parentElement.parentElement.parentElement;
+      const commentsSection = harmonograph.querySelector('.comments-section');
+      const commentInput = harmonograph.querySelector('.comment-input');
+      const newComment = document.createElement('div');
+      newComment.classList.add('comment');
+      newComment.textContent = commentInput.value;
+      commentsSection.appendChild(newComment);
+      commentInput.value = '';
+    });
+  });
+
+  // Function to toggle feedback form visibility and change button text
+  function toggleFeedbackForm() {
+    const feedbackForm = document.querySelector('.feedback-form');
+    const feedbackButton = feedbackForm.querySelector('.feedback-button');
+    const closeButton = feedbackForm.querySelector('.close-button');
+    if (feedbackForm.style.display === 'block') {
+      feedbackForm.style.display = 'none';
+      feedbackButton.style.display = 'block';
+      closeButton.style.display = 'none';
+    } else {
+      feedbackForm.style.display = 'block';
+      feedbackButton.style.display = 'none';
+      closeButton.style.display = 'block';
+    }
+  }
+
+  // Function to handle sending feedback
+  function sendFeedback(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Extract message from the form
+    const message = document.querySelector('.feedback-form textarea').value;
+
+    // Here you would typically make an AJAX request to your server to send the email
+    // For demonstration purposes, we'll just log the message to the console
+    console.log("Feedback message:", message);
+
+    // Optionally, you can clear the textarea after sending
+    document.querySelector('.feedback-form textarea').value = '';
+
+    // You can add additional logic here to provide user feedback after sending
+  }
+
+  // Function to handle like button click
+  function likeButtonClicked(button) {
+    let likes = 0;
+    likes++;
+    const likesCountElement = button.parentElement.parentElement.querySelector('.likes-count');
+    likesCountElement.textContent = `${likes} likes`;
+    // Change like button color to blue when clicked
+    button.classList.add('blue');
+  }
+</script>
+
+</body>
+</html>
