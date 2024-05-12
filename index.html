@@ -6,12 +6,14 @@
 <title>Harmonographs</title>
 <style>
   body {
-    font-family: 'Arial', sans-serif;
-    background-color: #181818; /* Dark background color like Spotify */
-    color: #fff; /* Text color */
-    margin: 0;
-    padding: 20px;
-  }
+  font-family: 'Arial', sans-serif;
+  background-color: #181818; /* Dark background color like Spotify */
+  color: #fff; /* Text color */
+  margin: 0 auto; /* Center the body horizontally */
+  max-width: 500px; /* Set the maximum width of the body */
+  padding: 20px;
+}
+
 
   /* Harmonograph container */
   .harmonograph {
@@ -216,7 +218,7 @@
   <div class="harmonograph-content">
     <div class="title-share-container">
         <h2>The Way Life Goes</h2>
-        <button class="share-button" onclick="share()">Share</button> <!-- Share button -->
+        <button class="share-button" onclick="share('Haemonographs/Lil Uzi Vert.png')">Share</button> <!-- Share button -->
       </div>
     <!-- Like and comment buttons -->
     <div class="harmonograph-buttons">
@@ -234,6 +236,32 @@
     </div>
   </div>
 </div>
+<div class="harmonograph">
+    <!-- Harmonograph image -->
+    <img src="Haemonographs/PRIDE Kendrick.png" alt="Harmonograph 1">
+  
+    <!-- Harmonograph content -->
+    <div class="harmonograph-content">
+      <div class="title-share-container">
+          <h2>PRIDE.</h2>
+          <button class="share-button" onclick="share('Haemonographs/PRIDE Kendrick.png')">Share</button> <!-- Share button -->
+        </div>
+      <!-- Like and comment buttons -->
+      <div class="harmonograph-buttons">
+        <button class="button like-button" onclick="likeButtonClicked(this)"><img src="like.png" alt="Like"></button>
+      </div>
+      <div class="likes-comments-container">
+        <span class="likes-count">0 likes</span>
+        <input type="text" class="comment-input" placeholder="Write a comment...">
+        <button class="post-comment-button">Post</button>
+      </div>
+  
+      <!-- Comments section -->
+      <div class="comments-section">
+        <!-- Comments will be displayed here -->
+      </div>
+    </div>
+  </div>
 
 <!-- Feedback form -->
 <form class="feedback-form" onsubmit="sendFeedback(event)">
@@ -316,10 +344,8 @@
   }
 
   // Function to handle sharing
-  // Function to handle sharing
-  function share() {
-    // Define the image URL and content you want to share
-    const imageUrl = 'Haemonographs/Lil Uzi Vert.png';
+  function share(imageUrl) {
+    // Define the content you want to share
     const shareContent = "Check out this harmonograph!";
 
     // Check if the browser supports the Web Share API
