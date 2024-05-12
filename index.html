@@ -6,178 +6,195 @@
 <title>Harmonographs</title>
 <style>
   body {
-  font-family: 'Arial', sans-serif;
-  background-color: #181818; /* Dark background color like Spotify */
-  color: #fff; /* Text color */
-  margin: 0;
-  padding: 20px;
-}
+    font-family: 'Arial', sans-serif;
+    background-color: #181818; /* Dark background color like Spotify */
+    color: #fff; /* Text color */
+    margin: 0;
+    padding: 20px;
+  }
 
-/* Harmonograph container */
-.harmonograph {
-  background-color: #282828; /* Darker background color */
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
+  /* Harmonograph container */
+  .harmonograph {
+    background-color: #282828; /* Darker background color */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
 
-.harmonograph img {
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
+  .harmonograph img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 
-/* Harmonograph content */
-.harmonograph-content {
-  padding: 20px;
-  position: relative;
-}
+  /* Harmonograph content */
+  .harmonograph-content {
+    padding: 20px;
+    position: relative;
+  }
 
-.harmonograph-content h2 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #fff; /* Title color */
-}
+  .harmonograph-content h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #fff; /* Title color */
+  }
 
-/* Like and comment buttons */
-.button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  transition: opacity 0.3s ease;
-  display: block; /* Ensure buttons are block-level elements */
-}
+  /* Like and comment buttons */
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: opacity 0.3s ease;
+    display: block; /* Ensure buttons are block-level elements */
+  }
 
-.button img {
-  width: 20px; /* Adjust as needed */
-  height: auto;
-  filter: invert(1); /* Invert icon color to white */
-}
+  .button img {
+    width: 20px; /* Adjust as needed */
+    height: auto;
+    filter: invert(1); /* Invert icon color to white */
+  }
 
-.button:hover {
-  opacity: 0.8;
-}
+  .button:hover {
+    opacity: 0.8;
+  }
 
-/* Likes count and comment input container */
-.likes-comments-container {
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-  width: 300px; /* Fixed width */
-}
+  /* Likes count and comment input container */
+  .likes-comments-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    width: 300px; /* Fixed width */
+  }
 
-/* Likes count */
-.likes-count {
-  margin-right: 10px;
-  font-size: 0.9rem;
-  color: #b3b3b3; /* Lighter color */
-}
+  /* Likes count */
+  .likes-count {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #b3b3b3; /* Lighter color */
+  }
 
-/* Comment input */
-.comment-input,
-.feedback-form textarea {
-  flex: 1; /* Take up remaining space */
-  padding: 10px;
-  border: 1px solid #282828; /* Match background color */
-  border-radius: 5px;
-  margin-right: 10px;
-  font-size: 0.9rem;
-  color: #fff; /* Text color */
-  background-color: #282828; /* Background color */
-  resize: none; /* Disable textarea resizing */
-  outline: none; /* Remove default focus outline */
-}
+  /* Comment input */
+  .comment-input,
+  .feedback-form textarea {
+    flex: 1; /* Take up remaining space */
+    padding: 10px;
+    border: 1px solid #282828; /* Match background color */
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #fff; /* Text color */
+    background-color: #282828; /* Background color */
+    resize: none; /* Disable textarea resizing */
+    outline: none; /* Remove default focus outline */
+  }
 
-/* Post comment button */
-.post-comment-button {
-  background-color: #1db954; /* Green color like Spotify */
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  padding: 5px 10px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  /* Post comment button */
+  .post-comment-button {
+    background-color: #1db954; /* Green color like Spotify */
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.post-comment-button:hover {
-  background-color: #1ed760; /* Darker green on hover */
-}
+  .post-comment-button:hover {
+    background-color: #1ed760; /* Darker green on hover */
+  }
 
-/* Comments section */
-.comments-section {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #282828; /* Match background color */
-}
+  /* Comments section */
+  .comments-section {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #282828; /* Match background color */
+  }
 
-.comment {
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-  color: #fff; /* Text color */
-}
+  .comment {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #fff; /* Text color */
+  }
 
-/* Feedback form */
-.feedback-form {
-  display: none; /* Hidden by default */
-  margin-top: 20px; /* Add some space above the form */
-  max-width: 300px; /* Limit width */
-}
+  /* Feedback form */
+  .feedback-form {
+    display: none; /* Hidden by default */
+    margin-top: 20px; /* Add some space above the form */
+    max-width: 300px; /* Limit width */
+  }
 
-/* Feedback form send button */
-.feedback-form input[type="submit"] {
-  background-color: #1db954; /* Green color like Spotify */
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  padding: 8px 15px; /* Adjust padding */
-  font-size: 0.9rem; /* Adjust font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  /* Feedback form send button */
+  .feedback-form input[type="submit"] {
+    background-color: #1db954; /* Green color like Spotify */
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 15px; /* Adjust padding */
+    font-size: 0.9rem; /* Adjust font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.feedback-form input[type="submit"]:hover {
-  background-color: #1ed760; /* Darker green on hover */
-}
+  .feedback-form input[type="submit"]:hover {
+    background-color: #1ed760; /* Darker green on hover */
+  }
 
-/* Feedback button */
-.feedback-button {
-  background-color: #1db954; /* Green color like Spotify */
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  padding: 10px 20px; /* Larger padding */
-  font-size: 1rem; /* Larger font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  /* Feedback button */
+  .feedback-button {
+    background-color: #1db954; /* Green color like Spotify */
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px; /* Larger padding */
+    font-size: 1rem; /* Larger font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.feedback-button:hover {
-  background-color: #1ed760; /* Darker green on hover */
-}
+  .feedback-button:hover {
+    background-color: #1ed760; /* Darker green on hover */
+  }
 
-/* Close button */
-.close-button {
-  background-color: #ff5555; /* Red color */
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  padding: 8px 15px; /* Adjust padding */
-  font-size: 0.9rem; /* Adjust font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  /* Close button */
+  .close-button {
+    background-color: #ff5555; /* Red color */
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 15px; /* Adjust padding */
+    font-size: 0.9rem; /* Adjust font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-.close-button:hover {
-  background-color: #ff3333; /* Darker red on hover */
-}
+  .close-button:hover {
+    background-color: #ff3333; /* Darker red on hover */
+  }
 
-/* Blue filter for like button */
-.like-button.blue img {
-  filter: invert(0); /* Blue color */
-}
+  /* Blue filter for like button */
+  .like-button.blue img {
+    filter: invert(0); /* Blue color */
+  }
+
+  /* Share button */
+  .share-button {
+    margin-left: 10px;
+    background-color: #3366ff; /* Green color like Spotify */
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .share-button:hover {
+    background-color: #4d79ff; /* Darker blue on hover */
+  }
 
 </style>
 </head>
@@ -199,6 +216,7 @@
       <span class="likes-count">0 likes</span>
       <input type="text" class="comment-input" placeholder="Write a comment...">
       <button class="post-comment-button">Post</button>
+      <button class="share-button" onclick="share()">Share</button> <!-- Share button -->
     </div>
 
     <!-- Comments section -->
@@ -215,8 +233,6 @@
   <button type="button" class="feedback-button" onclick="toggleFeedbackForm()">Feedback</button>
   <button type="button" class="close-button" onclick="toggleFeedbackForm()" style="display: none;">Close</button>
 </form>
-
-<!-- Add more harmonographs as needed -->
 
 <script>
   // JavaScript for like and comment buttons
@@ -288,6 +304,43 @@
     likesCountElement.textContent = `${likes} likes`;
     // Change like button color to blue when clicked
     button.classList.add('blue');
+  }
+
+  // Function to handle sharing
+  // Function to handle sharing
+  function share() {
+    // Define the image URL and content you want to share
+    const imageUrl = 'Haemonographs/Lil Uzi Vert.png';
+    const shareContent = "Check out this harmonograph!";
+
+    // Check if the browser supports the Web Share API
+    if (navigator.share) {
+      // Fetch the image
+      fetch(imageUrl)
+        .then(response => response.blob())
+        .then(imageBlob => {
+          // Convert image blob to URL
+          const imageURLObject = URL.createObjectURL(imageBlob);
+
+          // Use the Web Share API to share the content
+          navigator.share({
+            title: 'Harmonograph',
+            text: shareContent,
+            url: window.location.href,
+            files: [new File([imageBlob], 'harmonograph.png', { type: 'image/png' })] // Share image
+          })
+          .then(() => {
+            console.log('Successful share');
+            // Release the object URL
+            URL.revokeObjectURL(imageURLObject);
+          })
+          .catch((error) => console.log('Error sharing:', error));
+        })
+        .catch(error => console.log('Error fetching image:', error));
+    } else {
+      // Fallback for browsers that do not support the Web Share API
+      alert("Web Share API is not supported in this browser. You can manually share the content.");
+    }
   }
 </script>
 
