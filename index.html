@@ -60,6 +60,14 @@
     opacity: 0.8;
   }
 
+  /* Title and share button container */
+.title-share-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Add space between the title and the share button */
+}
+
+
   /* Likes count and comment input container */
   .likes-comments-container {
     display: flex;
@@ -206,7 +214,10 @@
 
   <!-- Harmonograph content -->
   <div class="harmonograph-content">
-    <h2>The Way Life Goes</h2>
+    <div class="title-share-container">
+        <h2>The Way Life Goes</h2>
+        <button class="share-button" onclick="share()">Share</button> <!-- Share button -->
+      </div>
     <!-- Like and comment buttons -->
     <div class="harmonograph-buttons">
       <button class="button like-button" onclick="likeButtonClicked(this)"><img src="like.png" alt="Like"></button>
@@ -215,7 +226,6 @@
       <span class="likes-count">0 likes</span>
       <input type="text" class="comment-input" placeholder="Write a comment...">
       <button class="post-comment-button">Post</button>
-      <button class="share-button" onclick="share()">Share</button> <!-- Share button -->
     </div>
 
     <!-- Comments section -->
