@@ -14,6 +14,77 @@
   padding: 20px;
 }
 
+.header {
+    background-color: #ffffffee; /* Background color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Add transition effect */
+    position: fixed; /* Fixed position */
+    max-width: 470px;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: -20px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000; /* Text color */
+    transition: color 0.3s ease; /* Add transition effect */
+    font-weight: bold;
+}
+
+.header img {
+    align-items: center;
+    height: 40px; /* Adjust height as needed */
+    transition: transform 0.3s ease; /* Add transition effect */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px; /* Adjust spacing between navigation items */
+}
+
+nav li:last-child {
+    margin-right: 0; /* Remove margin from last item */
+}
+
+/* Disclaimer */
+.disclaimer{
+    margin-top: 70px;
+}
+/* Hover effect */
+.header a:hover {
+    color: #ff9900; /* Change text color on hover */
+}
+
+.header img:hover {
+    transform: scale(1.1); /* Scale up image on hover */
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.header {
+    animation: fadeIn 0.5s ease; /* Apply fade-in animation to header */
+}
+
+
+
 /* Harmonograph container */
 .harmonograph {
   background-color: #282828; /* Darker background color */
@@ -264,9 +335,20 @@
 </style>
 </head>
 <body>
+    <div class="header">
+        <a href="https://shakespearechabungbam.github.io/ShMusic/"><img src="ShMusic logo.png" alt=""></a>
+        <nav>
+            <li>
+                <a href="https://shakespearechabungbam.github.io/ShMusic/">Home</a>
+            </li>
+        </nav>
+    </div>
 
 <!-- Disclaimer -->
-<p>Disclaimer ⚠️: Like and comment features are currently not functional.</p>
+<div class="disclaimer">
+    <p>Disclaimer ⚠️: Like and comment features are currently not functional.</p>
+</div>
+
 
 <!-- Harmonographs container -->
 <div class="harmonograph">
