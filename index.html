@@ -18,6 +18,12 @@
 .header-phone{
     display: none;
 }
+.header-phone-post{
+    display: none;
+}
+.header-phone-video{
+    display: none;
+}
 
 .header {
     background-color: #ffffffee; /* Background color */
@@ -337,22 +343,27 @@ nav li:last-child {
 }
 
 @media (max-width: 600px) {
+    
     .header-phone {
     display: block;
     background-color: #ffffffee; /* Background color */
     position: fixed; /* Fixed position */
-    bottom: 10px; /* Align to the bottom of the screen */
+    bottom: 0; /* Align to the bottom of the screen */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for center alignment */
     text-align: center; /* Center the content horizontally */
     border-top: 1px solid #ccc; /* Add a top border for separation */
-    border-radius: 30px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.header-phone:hover{
+    background-color: #e8ba15ee;
 }
 
 .header-phone a {
     color: #333; /* Link color */
     text-decoration: none; /* Remove underline */
-    padding: 5px 10px; /* Adjust padding as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
     display: inline-block; /* Display links in a row */
     font-weight: bold;
 }
@@ -367,22 +378,73 @@ nav li:last-child {
 .disclaimer{
     margin-top: 10px;
 }
+
+
+.header-phone-post{
+    display: block;
+    background-color: #e8ba15ee; /* Background color */
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to the bottom of the screen */
+    left: 20%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    text-align: center; /* Center the content horizontally */
+    border-top: 1px solid #ccc; /* Add a top border for separation */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.header-phone-post:hover{
+    background-color: #e8ba15;
+}
+.header-phone-post a{
+    color: #fff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: inline-block; /* Display links in a row */
+    font-weight: bold;
+}
+.header-phone-video{
+    display: block;
+    background-color: #ffffffee; /* Background color */
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to the bottom of the screen */
+    left: 80%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    text-align: center; /* Center the content horizontally */
+    border-top: 1px solid #ccc; /* Add a top border for separation */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.header-phone-video:hover{
+    background-color: #e8ba15ee;
+}
+.header-phone-video a{
+    color: #333; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: inline-block; /* Display links in a row */
+    font-weight: bold;
+}
 }
 
 </style>
 </head>
 <body>
-    <div class="header">
-        <a href="https://shakespearechabungbam.github.io/ShMusic/"><img src="ShMusic logo.png" alt=""></a>
-        <nav>
-            <li>
-                <a href="https://shakespearechabungbam.github.io/ShMusic/">Home</a>
-            </li>
-        </nav>
+    <div class="header-all">
+        <div class="header">
+            <a href="https://shakespearechabungbam.github.io/ShMusic/"><img src="ShMusic logo.png" alt=""></a>
+                    <a href="https://shakespearechabungbam.github.io/ShMusic/">Home</a>
+        </div>
+        <div class="header-phone">
+            <a href="https://shakespearechabungbam.github.io/ShMusic/" class="active">Home</a>
+        </div>
+        <div class="header-phone-post">
+            <a href="https://shakespearechabungbam.github.io/ShMusic/">Post</a>
+        </div>
+        <div class="header-phone-video">
+            <a href="harmonographsvideo.html">Video</a>
+        </div>
     </div>
-    <div class="header-phone">
-        <a href="https://shakespearechabungbam.github.io/ShMusic/">Home</a>
-    </div>
+    
 
 <!-- Disclaimer -->
 <div class="disclaimer">
