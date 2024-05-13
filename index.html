@@ -9,10 +9,14 @@
   font-family: 'Arial', sans-serif;
   background-color: #181818; /* Dark background color like Spotify */
   color: #fff; /* Text color */
-  margin: 0 auto; /* Center the body horizontally */
+  margin: auto; /* Center the body horizontally */
   max-width: 500px; /* Set the maximum width of the body */
   padding: 20px;
   align-items: center;
+}
+
+.header-phone{
+    display: none;
 }
 
 .header {
@@ -170,7 +174,7 @@ nav li:last-child {
 
 /* Post comment button */
 .post-comment-button {
-  background-color: #1db954; /* Green color like Spotify */
+  background-color:  #3498db; /* Green color like Spotify */
   color: #fff;
   border-radius: 5px;
   border: none;
@@ -181,7 +185,7 @@ nav li:last-child {
 }
 
 .post-comment-button:hover {
-  background-color: #1ed760; /* Darker green on hover */
+  background-color: #007dd1; /* Darker green on hover */
 }
 
 /* Comments section */
@@ -333,11 +337,36 @@ nav li:last-child {
 }
 
 @media (max-width: 600px) {
+    .header-phone {
+    display: block;
+    background-color: #ffffffee; /* Background color */
+    position: fixed; /* Fixed position */
+    bottom: 10px; /* Align to the bottom of the screen */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for center alignment */
+    text-align: center; /* Center the content horizontally */
+    border-top: 1px solid #ccc; /* Add a top border for separation */
+    border-radius: 30px;
+}
+
+.header-phone a {
+    color: #333; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 5px 10px; /* Adjust padding as needed */
+    display: inline-block; /* Display links in a row */
+    font-weight: bold;
+}
+
+
+
     .header {
-        align-items: center;
-        max-width: 37%; /* Adjust as needed */
-        padding: 3px 15px; /* Adjust padding as needed */
+        display: none;
     }
+
+    /* Disclaimer */
+.disclaimer{
+    margin-top: 10px;
+}
 }
 
 </style>
@@ -350,6 +379,9 @@ nav li:last-child {
                 <a href="https://shakespearechabungbam.github.io/ShMusic/">Home</a>
             </li>
         </nav>
+    </div>
+    <div class="header-phone">
+        <a href="https://shakespearechabungbam.github.io/ShMusic/">Home</a>
     </div>
 
 <!-- Disclaimer -->
